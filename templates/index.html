@@ -37,13 +37,37 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a final-year Computer engineering student with a strong foundation in Python-based web technologies. I specialize in building responsive, scalable web applications using Flask, Django, and modern frontend technologies like React and JavaScript. I am enthusiastic about learning new technologies and tackling real-world problems.</p>
+        <p>I am a Python full-stack web development student specializing in building responsive, scalable web applications using Flask, Django, and modern frontend technologies like React and JavaScript. I have a strong foundation in Python-based web technologies and am enthusiastic about tackling real-world problems and learning new technologies.</p>
     </section>
-
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">  
+                <ul>
+                    <li>Python(Django)</li>
+                    <li>JavaScript </li>
+                    <li>HTML&CSS</li>
+                    <li>SQL</li>
+                    <li>Flask</li>
+                    <li>React</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Platforms</h3>
+                <ul>
+                    <li>Git & GitHub</li>
+                    <li>SQLite</li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+    
     <section id="resume">
         <h2>Resume</h2>
-        <p>Download my resume for a detailed overview of my education, skills, and work experience:</p>
-        <a href="{{ url_for('download_resume') }}" class="btn">Download Resume</a>
+        <p>Download my resume for a detailed overview of my education and skills</p>
+        <a href="{{ url_for('download_resume') }}" class="btn btn-primary">Download Resume</a>
     </section>
 
     <section id="portfolio">
@@ -51,18 +75,15 @@
         <div class="projects">
             <div class="project">
                 <h3>Hotel Management System</h3>
-                <p>A comprehensive hotel management system built using Django and PostgreSQL. It includes features for managing room bookings, customer information, and staff records, with a secure admin dashboard for easy operation.</p>
+                <img src="{{ url_for('static', filename='images/download.jpg') }}">
+                <p>A furniture booking site allows users to browse, select, and reserve furniture items for purchase or rental online, with options for delivery or pickup.</p>
                 <a href="https://github.com/Adithyakb2005/Hotelmng" target="_blank">View on GitHub</a>
             </div>
             <div class="project">
                 <h3>E-commerce Website</h3>
-                <p>An e-commerce platform built using Flask, SQLite, and Bootstrap. It features user authentication, product listings, a shopping cart, and order management.</p>
-                <a href="https://github.com/yourgithub/ecommerce-website" target="_blank">View on GitHub</a>
-            </div>
-            <div class="project">
-                <h3>Blog Application</h3>
-                <p>A blog platform built with Django Rest Framework and React. Users can create, edit, and comment on posts. The platform includes a user-friendly interface and secure authentication.</p>
-                <a href="https://github.com/yourgithub/blog-application" target="_blank">View on GitHub</a>
+                <img src="{{ url_for('static', filename='images/2259557.webp') }}">
+                <p>An e-commerce platform built using Django. It features user authentication, product listings, a shopping cart, and order management.</p>
+                <a href="https://github.com/Adithyakb2005/Mainproject" target="_blank">View on GitHub</a>
             </div>
         </div>
     </section>
@@ -71,10 +92,10 @@
     <section id="services">
         <h2>Services</h2>
         <ul>
-            <li>Custom Web Application Development</li>
-            <li>RESTful API Design and Integration</li>
             <li>Frontend Development with React and JavaScript</li>
             <li>Backend Development with Flask and Django</li>
+            <li>Custom Web Application Development</li>
+            <li>RESTful API Design and Integration</li>
             <li>Database Management and Optimization</li>
         </ul>
     </section>
@@ -82,7 +103,7 @@
     <section id="contact">
         <h2>Contact</h2>
         <p>If you'd like to work together, feel free to reach out!</p>
-        <form action="https://formsubmit.co/your-email@example.com" method="POST">
+        <form action="https://formsubmit.co/adithyakb1001@gmail.com" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>

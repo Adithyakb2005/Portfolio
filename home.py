@@ -8,6 +8,6 @@ def home():
 
 @app.route("/download-resume")
 def download_resume():
-    return send_from_directory(directory=".", path="resume.pdf", as_attachment=True)
+    return send_from_directory(directory=".", path="Adithyakb.pdf", as_attachment=True)
 
 app.run()
