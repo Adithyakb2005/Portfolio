@@ -1,22 +1,21 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 /* Body */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     line-height: 1.6;
-    background-color: #f4f7fc;
+    background-color: #92c8e5;
     color: #333;
+    overflow-x: hidden;
 }
 
 /* Header Section */
 header {
-    background-color: #007acc;
+    background-color: #073c60;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -32,51 +31,85 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #f4f7fc;
 }
 
 /* Home Section */
 #home {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    padding: 50px 50%;
+    padding: 50px 10%;
     background-color: #acc9d9;
+    text-align: center;
 }
 
-.home-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 .home-image {
-    flex: 2;  /* Makes the image container take 1/3rd of the available space */
-    display: flex;
-    justify-content: center;  /* Center the image horizontally within its container */
+    flex: 1;
+    max-width: 400px;
+    margin-bottom: 20px;
 }
+
 .home-image img {
-    width: 450px;  
-    height: 450px;  
-   
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-right: 80px;  
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.home-content {
+    flex: 1;
+    max-width: 600px;
 }
 
 .home-content h3 {
-    font-size: 2rem;
-    margin: 10px 0;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
 .home-content p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
 
+.home-content .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 25px;
+    background-color: #007acc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-content .btn:hover {
+    background-color: #005fa3;
+}
+
+/* Responsive Adjustments for Home Section */
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column;
+    }
+
+    .home-image {
+        max-width: 300px;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+    }
+}
 /* About Section */
 #about {
-    background-color: #fff;
+    background-color: #acc9d9;
     padding: 50px 10%;
     text-align: center;
 }
@@ -95,7 +128,7 @@ nav a:hover {
 
 /* Skills Section */
 #skills {
-    background-color: #f9f9f9;
+    background-color: #acc9d9;
     padding: 50px 10%;
 }
 
@@ -138,7 +171,7 @@ nav a:hover {
 #resume {
     text-align: center;
     padding: 50px 10%;
-    background-color: #fff;
+    background-color: #acc9d9;
 }
 
 #resume p {
@@ -146,7 +179,7 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-.btn {
+section.btn {
     background-color: #007acc;
     color: white;
     padding: 12px 25px;
@@ -161,7 +194,7 @@ nav a:hover {
 
 /* Portfolio Section */
 #portfolio {
-    background-color: #f9f9f9;
+    background-color: #acc9d9;
     padding: 50px 10%;
 }
 
@@ -179,7 +212,7 @@ nav a:hover {
 }
 
 .project {
-    background-color: #fff;
+    background-color: #acc9d9;
     padding: 20px;
     width: 48%;
     border-radius: 5px;
@@ -209,7 +242,7 @@ nav a:hover {
 
 /* Services Section */
 #services {
-    background-color: #fff;
+    background-color: #acc9d9;
     padding: 50px 10%;
     text-align: center;
 }
@@ -226,7 +259,7 @@ nav a:hover {
 
 /* Contact Section */
 #contact {
-    background-color: #f9f9f9;
+    background-color: #acc9d9;
     padding: 50px 10%;
 }
 
@@ -258,7 +291,7 @@ form textarea {
 }
 
 form button {
-    background-color: #007acc;
+    background-color: #093d60;
     color: white;
     padding: 12px 25px;
     font-size: 1.1rem;
@@ -273,7 +306,7 @@ form button:hover {
 
 /* Footer Section */
 footer {
-    background-color: #007acc;
+    background-color: #073c60;
     color: white;
     text-align: center;
     padding: 20px;
