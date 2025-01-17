@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,34 +9,118 @@
 body {
     font-family: "Arial", sans-serif;
     line-height: 1.6;
-    background-color: #92c8e5;
+    background-color: #f7f9fc;
     color: #333;
     overflow-x: hidden;
+    padding: 0;
 }
 
 /* Header Section */
+/* Navbar Styling */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #073c60;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 15px 5%;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-nav a {
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
     color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
     margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
     text-decoration: none;
     font-size: 1.1rem;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+.nav-links a:hover {
     color: #f4f7fc;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        height: 0;
+        background-color: #073c60;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links.active {
+        height: 300px; /* Adjust as needed */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.3rem;
+    }
+
+    .logo a {
+        font-size: 1.6rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Home Section */
@@ -44,7 +129,7 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 50px 10%;
+    padding: 100px 10%;
     background-color: #acc9d9;
     text-align: center;
 }
@@ -56,9 +141,10 @@ nav a:hover {
 }
 
 .home-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+    max-width: 100%;
+    max-height: 500px;
+    margin-left: 100px;
+    border-radius: 50%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -70,6 +156,7 @@ nav a:hover {
 .home-content h3 {
     font-size: 2.5rem;
     margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .home-content p {
@@ -93,23 +180,9 @@ nav a:hover {
     background-color: #005fa3;
 }
 
-/* Responsive Adjustments for Home Section */
-@media (max-width: 768px) {
-    #home {
-        flex-direction: column;
-    }
-
-    .home-image {
-        max-width: 300px;
-    }
-
-    .home-content h3 {
-        font-size: 2rem;
-    }
-}
 /* About Section */
 #about {
-    background-color: #acc9d9;
+    background-color: #fff;
     padding: 50px 10%;
     text-align: center;
 }
@@ -128,7 +201,7 @@ nav a:hover {
 
 /* Skills Section */
 #skills {
-    background-color: #acc9d9;
+    background-color: #fff;
     padding: 50px 10%;
 }
 
@@ -146,20 +219,22 @@ nav a:hover {
 }
 
 .skill-category {
-    background-color: #fff;
+    background-color: #c4e2f6;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 48%;
+    flex: 1 1 calc(48% - 20px);
 }
 
 .skill-category h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .skill-category ul {
     list-style-type: none;
+    padding: 0;
 }
 
 .skill-category ul li {
@@ -171,7 +246,7 @@ nav a:hover {
 #resume {
     text-align: center;
     padding: 50px 10%;
-    background-color: #acc9d9;
+    background-color: #f7f9fc;
 }
 
 #resume p {
@@ -186,6 +261,7 @@ section.btn {
     font-size: 1.1rem;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
@@ -194,7 +270,7 @@ section.btn {
 
 /* Portfolio Section */
 #portfolio {
-    background-color: #acc9d9;
+    background-color: #fff;
     padding: 50px 10%;
 }
 
@@ -212,16 +288,22 @@ section.btn {
 }
 
 .project {
-    background-color: #acc9d9;
+    background-color: #f7f9fc;
     padding: 20px;
-    width: 48%;
+    flex: 1 1 calc(48% - 20px);
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.project:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .project h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .project img {
@@ -242,9 +324,14 @@ section.btn {
 
 /* Services Section */
 #services {
-    background-color: #acc9d9;
+    background-color: #fff;
     padding: 50px 10%;
     text-align: center;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 #services ul {
@@ -259,10 +346,12 @@ section.btn {
 
 /* Contact Section */
 #contact {
-    background-color: #acc9d9;
+    background-color: #f7f9fc;
     padding: 50px 10%;
 }
-
+#contact p{
+    margin-left:300px;
+}
 #contact h2 {
     font-size: 2.5rem;
     text-align: center;
@@ -298,6 +387,7 @@ form button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
@@ -317,3 +407,52 @@ footer p {
     font-size: 1rem;
 }
 
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    #home {
+        flex-direction: column;
+        padding: 60px 10%;
+    }
+
+    .home-image {
+        margin-left: 0;
+        max-width: 300px;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+    }
+
+    .skills-container,
+    .projects {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .skill-category,
+    .project {
+        flex: 1 1 100%;
+    }
+
+    form {
+        padding: 0 5%;
+    }
+}
